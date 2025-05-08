@@ -11,29 +11,36 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="d-flex flex-column">
+    <div>
     <%= form.label :tittle, style: "display: block" %>
     <%= form.text_field :tittle %>
-  </div>
+    </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
+    <div>
+      <%= form.label :description, style: "display: block" %>
+      <%= form.text_field :description %>
+    </div>
 
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
-  </div>
+    <div class="d-flex flex-row justify-content-between">
+      <div>
+        <%= form.label :priority, style: "display: block" %>
+        <%= form.select :status, options_for_select([['To Do', 'to_do'], ['Doing', 'doing'], ['Done', 'done']]), {}, { style: "display: block" } %>
+      </div>
 
-  <div>
-    <%= form.label :priority, style: "display: block" %>
-    <%= form.number_field :priority %>
-  </div>
 
-  <div>
-    <%= form.label :assignee, style: "display: block" %>
-    <%= form.text_field :assignee %>
+      <div>
+        <%= form.label :priority, style: "display: block" %>
+        <%= form.select :priority, options_for_select([['Low', 1], ['Medium', 2], ['High', 3]]), {}, { style: "display: block" } %>
+      </div>
+    </div>
+
+    
+
+    <div>
+      <%= form.label :assignee, style: "display: block" %>
+      <%= form.text_field :assignee %>
+    </div>
   </div>
 
   <div>
