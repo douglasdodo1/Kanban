@@ -1,0 +1,111 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Tasks" %>
+
+<div class="d-flex justify-content-start align-items-center flex-column w-100 min-vh-90">
+  <h1 class="text-black mb-5">Kanban</h1>
+  <div class="d-flex flex-row align-items-start justify-content-between w-75 mt-5 " style="height:70vh">
+    
+    <div class="d-flex flex-column h-100 justify-content-start align-items-center border border-2 border-dark " style="flex: 0 0 28%; border-radius: 35px; background-color: #EEEEEEFF;">
+      <div class="mt-4 d-flex flex-row border-2 border-dark w-100 d-flex justify-content-start align-items-center" style=" border-top-left-radius: 13px; border-top-right-radius: 13px;">
+        <div class="ms-4 me-2 border  rounded-circle" style="width:12px; height:12px; background-color: #7F5AF0;">
+        </div>
+        <h2>To Do</h2>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center" style="height:13%; width:100%; ">
+        <div class="d-flex justify-content-center align-items-center border border-2 h-75" style=" border-radius:40px; width:85%; background-color: #7F5AF0;" >
+          <label class="text-white" style="font-size: 20px;"> + Add New Task </label>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-end justify-content-end mt-2 w-100" style="height: 87%;">
+        <div class="w-100 h-100 px-2" style="background-color: #EEEEEEFF; border-bottom-left-radius: 33px; border-bottom-right-radius: 33px;">
+          <div class=" border border-2 border-gray rounded-5 h-25">
+            <% @tasks.each do |task| %>
+              <% if task.status == "to do" %>
+                <div class="card rounded-5 h-100">
+                  <div class="card-body align-items-between d-flex flex-column">
+                    <h4 class="card-title"><%= task.tittle %></h4>
+                    <div class="ms-2 d-flex flex-row align-items-end w-100 h-100">
+                      <p class="card-text ms-2"><strong>assigner:</strong> <%= task.assignee %></p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+    <div class="d-flex flex-column h-100 justify-content-start align-items-center border border-2 border-dark " style="flex: 0 0 28%; border-radius: 35px; background-color: #EEEEEEFF;">
+      <div class="mt-4 d-flex flex-row border-2 border-dark w-100 d-flex justify-content-start align-items-center" style=" border-top-left-radius: 13px; border-top-right-radius: 13px;">
+        <div class="ms-4 me-2 border  rounded-circle" style="width:12px; height:12px; background-color: #FF8A1DFF;">
+        </div>
+        <h2>Doing</h2>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center" style="height:13%; width:100%; ">
+        <div class="d-flex justify-content-center align-items-center border border-2 h-75" style=" border-radius:40px; width:85%; background-color: #FF8A1DFF;" >
+          <label class="text-white" style="font-size: 20px;"> + Add New Task </label>
+        </div>
+      </div>
+
+     <div class="d-flex align-items-end justify-content-end mt-2 w-100" style="height: 87%;">
+        <div class="w-100 h-100 px-2" style="background-color: #EEEEEEFF; border-bottom-left-radius: 33px; border-bottom-right-radius: 33px;">
+          <div class=" border border-2 border-gray rounded-5 h-25">
+            <% @tasks.each do |task| %>
+              <% if task.status == "to do" %>
+                <div class="card rounded-5 h-100">
+                  <div class="card-body align-items-between d-flex flex-column">
+                    <h4 class="card-title"><%= task.tittle %></h4>
+                    <div class="ms-2 d-flex flex-row align-items-end w-100 h-100">
+                      <p class="card-text ms-2"><strong>assigner:</strong> <%= task.assignee %></p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column h-100 justify-content-start align-items-center border border-2 border-dark " style="flex: 0 0 28%; border-radius: 35px; background-color: #EEEEEEFF;">
+      <div class="mt-4 d-flex flex-row border-2 border-dark w-100 d-flex justify-content-start align-items-center" style=" border-top-left-radius: 13px; border-top-right-radius: 13px;">
+        <div class="ms-4 me-2 border  rounded-circle" style="width:12px; height:12px; background-color: #2CB61AFF;">
+        </div>
+        <h2>Done</h2>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center" style="height:13%; width:100%; ">
+        <div class="d-flex justify-content-center align-items-center border border-2 h-75" style=" border-radius:40px; width:85%; background-color: #2CB61AFF;" >
+          <label class="text-white" style="font-size: 20px;"> + Add New Task </label>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-end justify-content-end mt-2 w-100" style="height: 87%;">
+        <div class="w-100 h-100 px-2" style="background-color: #EEEEEEFF; border-bottom-left-radius: 33px; border-bottom-right-radius: 33px;">
+          <div class=" border border-2 border-gray rounded-5 h-25">
+            <% @tasks.each do |task| %>
+              <% if task.status == "to do" %>
+                <div class="card rounded-5 h-100">
+                  <div class="card-body align-items-between d-flex flex-column">
+                    <h4 class="card-title"><%= task.tittle %></h4>
+                    <div class="ms-2 d-flex flex-row align-items-end w-100 h-100">
+                      <p class="card-text ms-2"><strong>assigner:</strong> <%= task.assignee %></p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
