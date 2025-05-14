@@ -54,6 +54,15 @@ class TasksController < ApplicationController
     end
   end
 
+  def update_status
+    @task = Task.find(params[:id])
+    if @task.update(status: params[:status])
+      head :ok
+    else
+      head :unprocessable_entity
+    end
+  end
+
   # DELETE /tasks/1
   def destroy
     @task.destroy!
